@@ -7,7 +7,29 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+	output: {
+		filename: '[name].[chunkhash].js'
+	},
+	module: {
+		strictExportPresence: true
+	},
 	plugins: [
+		new HtmlWebpackPlugin({
+			inject: true,
+			template: './public/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeRedundantAttributes: true,
+				useShortDoctype: true,
+				removeEmptyAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+				keepClosingSlash: true,
+				minifyJS: true,
+				minifyCSS: true,
+				minifyURLs: true,
+			},
+		}),
 		new webpack.HashedModuleIdsPlugin(),
 		new UglifyJSPlugin(),
 		new webpack.DefinePlugin({
@@ -17,10 +39,14 @@ module.exports = merge(common, {
 			algorithm: 'gzip',
 			test: /\.js$|\.css$|\.html$/,
 			threshold: 10240,
-      		minRatio: 0.8
+			minRatio: 0.8
 		})
 	],
-	output: {
-		filename: '[name].[chunkhash].js'
+	node: {
+		dgram: 'empty',
+		fs: 'empty',
+		net: 'empty',
+		tls: 'empty',
+		child_process: 'empty',
 	}
 });

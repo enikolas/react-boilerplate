@@ -36,7 +36,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
-			title: 'React Boilerplate',
+			inject: true,
 			template: './public/index.html'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
