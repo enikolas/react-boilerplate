@@ -27,7 +27,7 @@
     "compression-webpack-plugin": "^1.1.9",
     "css-loader": "^0.28.10",
     "file-loader": "^1.1.10",
-    "html-webpack-plugin": "webpack-contrib/html-webpack-plugin",
+    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.0.1",
