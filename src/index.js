@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './style.css';
+import App from './containers/App';
+
+import './styles.styl';
 
 ReactDOM.render(
-	<h1>Hello, world!</h1>,
-	document.getElementById('root')
+  <App />,
+  document.getElementById('app')
 );
