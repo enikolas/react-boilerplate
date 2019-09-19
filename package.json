@@ -18,6 +18,10 @@
     "email": "enikolas.oliveira@gmail.com"
   },
   "license": "MIT",
+  "browserslist": [
+    "last 2 version",
+    "> 5%"
+  ],
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
